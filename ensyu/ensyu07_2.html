@@ -1,0 +1,69 @@
+<!--  作成日：2017/06/01 -->
+<!--  作成者：鈴木 翔哉 --> 
+ 
+<!DOCTYPE html> 
+<html lang="ja"> 
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>学生情報登録2</title>
+</head> 
+ 
+<body>
+    <h2>学生情報登録2</h2>
+    <p>必要事項を記入して登録ボタンを押してください。</p><br>
+    <form>
+        <table>
+            <caption>入力フォーム</caption>
+            <tbody>
+                <tr><th>
+                    <label for="studentid">学籍番号</label>
+                    </th><td>
+                    <input type="number" name="studentid" id="studentid" />
+                    </td></tr>
+                <tr><th>
+                    <label for="username">氏名</label>
+                    </th><td>
+                    <input type="text" name="username" id="username" />
+                    </td></tr>
+                <tr><th>
+                    <label for="tel">電話番号</label>
+                    </th>
+                    <td>
+                        <input type="tel" name="tel" id="tel" />
+                    </td></tr>
+                 <tr><th>
+                     <label for="birthday">入学年月日</label>
+                     </th><td>
+                     <input type="date" name="birthday" id="birthday" />
+                     </td></tr>
+                <tr><th>
+                    <label for="mail">eメール</label>
+                    </th><td>
+                    <input type="email" name="mail" id="mail" />
+                    </td></tr>
+                <tr><th>
+                    性別
+                    </th><td>
+                    <input type="radio" name="gender" value="男" id="man" checked>
+                    <label for="man">男</label>
+                    <input type="radio" name="gender" value="女" id="woman">
+                    <label for="woman">女</label>
+                    <input type="radio" name="gender" value="その他" id="secret">
+                    <label for="woman">その他</label>
+                    </td></tr> 
+            </tbody>
+        </table>
+        <p>
+        <label>備考
+            <br>
+            <textarea name="remarks" cols="40" rows="4" maxlength="40"></textarea>
+            </label>
+        </p>
+        <input type="submit" onclick="alert('send now!') ; return false;" value="登録">
+        <input type="reset" value="クリア">
+    </form>
+    <a href="../index.html">ホームへ戻る</a>
+</body> 
+ 
+</html>

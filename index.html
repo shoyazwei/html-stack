@@ -1,0 +1,389 @@
+<!DOCTIPE html>
+<html lang="ja">
+    
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <title>R3A112</title>
+    <link rel=stylesheet href="study.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/> 
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        var windowHeight = $(window).height();
+            function check(){
+                var flag = 0;
+                if(document.info.username.value == ""){
+                    flag = 1;
+                    info.username.style.backgroundColor='pink';
+                }else{
+                    info.username.style.backgroundColor='#ffffff';
+                }
+                if(flag){
+                    window.alert('必須項目に未入力がありました');
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+        var i=4;
+        
+        /* 作品部分 */
+        $(document).ready(function(){
+              $('.ensyuu').slick({
+                infinite: true,
+                slidesToShow: i,
+                slidesToScroll: i,
+                dots:true
+              });
+        var size = $('.ensyuu div').length;
+        
+        var width = Math.ceil(size/i)*20;
+        $('.slick-dots').attr('style','width:'+width+'px;margin:0 auto;position:inherit;bottom:0;');
+            });
+        
+        /*スクロールに合わせてアクション*/
+        $(function(){
+            
+    $(window).scroll(function (){
+        $('.slide-box-l').each(function(){
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            
+            var ds = $(this).scrollTop();
+//            var val=elemPos - windowHeight + 200;
+//            $('.testscroll').html("scroll位置"+scroll+'<br>要素位置'+elemPos+'<br>windowHeight<br>'+windowHeight+'<br>val'+val);
+//            
+            if (scroll > elemPos - windowHeight + 200 && scroll < elemPos+300){
+                $(this).addClass('scrollin');
+            }else{
+                $(this).removeClass('scrollin');
+            }
+
+        });
+    });
+    $(window).scroll(function (){
+        $('.slide-box-r').each(function(){
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            
+            var ds = $(this).scrollTop();
+           
+            if (scroll > elemPos - windowHeight + 200 && scroll < elemPos+300){
+                $(this).addClass('scrollin');
+            }else{
+                $(this).removeClass('scrollin');
+            }
+
+        });
+    });
+});
+        
+        
+
+    </script> 
+</head>
+    
+<body>
+    
+    <header id="top">
+        <h1>HTML演習</h1>
+    </header>
+    
+   
+<div id="ham-menu">
+    <ul>
+        <li><a href="#top">Top</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#bottom">Bottom</a></li>
+        <li><a href="nogizaka.html">46</a></li>
+    </ul>
+</div>
+    <div id="menu-background"></div>
+<!--  <div class="testscroll" style="position:fixed;left:0;top:0; background:#fff;padding:10px;"></div>-->
+    
+<section id="work" class="works">
+    
+    <h2 id="s" class="title1">作品</h2>
+    <div class="ensyuu">
+    <div class="color"><a href="ensyu/ensyu01.html">
+        <img src="img/ensyu01.png" width="180" 
+             alt="ensyu01" title="ensyu01"></a></div>
+   
+    <div><a href="ensyu/ensyu02.html">
+        <img src="img/ensyu02.png" width="180" 
+             alt="ensyu02" title="ensyu02"></a></div>
+    
+    <div><a href="ensyu/ensyu03_1.html">
+        <img src="img/ensyu03_1.png" width="180" 
+             alt="ensyu03_1" title="ensyu03_1"></a></div>
+    
+    <div><a href="ensyu/ensyu03_2.html">
+        <img src="img/ensyu03_2.png" width="180" 
+             alt="ensyu03_2" title="ensyu03_2"></a></div>
+        
+    <div><a href="ensyu/ensyu04_1.html">
+        <img src="img/ensyu04_1.PNG" width="180" 
+             alt="ensyu04_1" title="ensyu04_1"></a></div>
+        
+    <div><a href="ensyu/ensyu04_2.html">
+        <img src="img/ensyu04_2.png" width="180" 
+             alt="ensyu04_2" title="ensyu04_2"></a></div>
+        
+    <div><a href="ensyu/ensyu04_3.html">
+        <img src="img/ensyu04_3.png" width="180" 
+             alt="ensyu04_3" title="ensyu04_3"></a></div>
+        
+     <div><a href="ensyu/ensyu05.html">
+        <img src="img/ensyu05.png" width="180" 
+             alt="ensyu05" title="ensyu05"></a></div>
+    
+    <div><a href="ensyu/ensyu06_1.html">
+        <img src="img/ensyu06_1.png" width="180" 
+             alt="ensyu06_1" title="ensyu06_1"></a></div>
+        
+     <div><a href="ensyu/ensyu06_2.html">
+        <img src="img/ensyu06_2.png" width="180" 
+             alt="ensyu06_2" title="ensyu06_2"></a></div>
+        
+    <div><a href="ensyu/ensyu07_1.html">
+        <img src="img/ensyu07_1.png" width="180" 
+             alt="ensyu07_1" title="ensyu07_1"></a></div>
+        
+    <div><a href="ensyu/ensyu07_2.html">
+        <img src="img/ensyu07_2.png" width="180" 
+             alt="ensyu07_2" title="ensyu07_2"></a></div>
+        
+    <div><a href="ensyu/ensyu07_3.html">
+        <img src="img/ensyu07_3.png" width="180" 
+             alt="ensyu07_3" title="ensyu07_3"></a></div>
+        
+    <div><a href="ensyu/ensyu08_1.html">
+        <img src="img/ensyu08_1.png" width="180" 
+             alt="ensyu08_1" title="ensyu08_1"></a></div>
+    
+    <div><a href="ensyu/ensyu08_2.html">
+        <img src="img/ensyu08_2.png" width="180" 
+             alt="ensyu08_2" title="ensyu08_2"></a></div>
+        
+    <div><a href="ensyu/ensyu09_1.html">
+        <img src="img/ensyu09_1.png" width="180" 
+             alt="ensyu09_1" title="ensyu09_1"></a></div>
+        
+    <div><a href="ensyu/ensyu09_2_1.html">
+        <img src="img/ensyu09_2_1.png" width="180" 
+             alt="ensyu09_2_1" title="ensyu09_2_1"></a></div>
+        
+    <div><a href="ensyu/ensyu09_2_2.html">
+        <img src="img/ensyu09_2_2.png" width="180" 
+             alt="ensyu09_2_2" title="ensyu09_2_2"></a></div>
+        
+    <div><a href="ensyu/ensyu10.html">
+        <img src="img/ensyu10.png" width="180" 
+             alt="ensyu10" title="ensyu10"></a></div>
+        
+    <div><a href="ensyu/モバイルサイト設計_適合調査(R3A112)【スバル】.pdf">
+        <img src="img/ユニバーサルデザイン.png" width="180" 
+             alt="ユニバーサルデザイン" title="ユニバーサルデザイン"></a></div>
+    
+    </div>
+</section>
+    <section id="about" style="clear:both" class="abouts">
+    <div class="box1">
+        <div class="box1_1"></div>
+    <div class="box1_2">
+    <div class="box1_2_1">
+    <div class="slide-box-l">
+        <h2 class="title1" >自己紹介</h2>
+        </div>
+        
+        
+        <h3>クラス・名前</h3>
+        <p><b>R3A1 12 <ruby>鈴木<rt>すずき</rt></ruby>
+            <ruby>翔哉<rt>しょうや</rt></ruby></b></p>
+        </div>
+    </div>
+    </div>
+    
+    
+    <div class="box2">
+    <div class="box2_1"></div>
+    <div class="box2_2">
+    <div class="box2_2_1">
+    <div class="slide-box-r">
+    <h3>出身地</h3>
+    </div>
+        
+    <p>岩見沢</p>
+    <ul>
+        <iframe width="350" height="210" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d186120.5460941148!2d141.686940894648!3d43.20668849210882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b4c7716283435%3A0x44a7b773dd7531fe!2z5YyX5rW36YGT5bKp6KaL5rKi5biC!5e0!3m2!1sja!2sjp!4v1495066992256" width="300" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </ul>
+    </div>
+    </div>
+    </div>
+    
+    <div class="box3">
+    <div class="box3_1"></div>
+    <div class="box3_2">
+    <div class="box3_2_1">
+    <div class="slide-box-l">
+    <h3>趣味・特技</h3>
+    </div>
+        
+    <ul>
+    <li>サッカー</li>
+    <li>音楽鑑賞</li>
+    <li>車</li>
+    </ul>
+    </div>
+    </div>
+    </div>    
+    
+    <div class="box4">
+    <div class="box4_1"></div>
+    <div class="box4_2">
+    <div class="box4_2_1">
+    <div class="slide-box-r">
+    <h3>資格（在学中に取得する！）</h3>
+    </div>
+        
+    <ul>
+    <li>情報安全確保支援士試験</li>
+    <li>データベーススペシャリスト</li>
+    </ul>
+    </div>
+    </div>
+    </div> 
+     
+    <div class="box5">
+    <div class="box5_1"></div>
+    <div class="box5_2">
+    <div class="box5_2_1">
+    <div class="slide-box-l">
+    <h3>習得技術</h3>
+    </div>
+        
+    <ul>
+        <li><em>C</em></li>
+        <li><em>java</em></li>
+        <li><em>HTML5,CSS,JavaScript</em></li>
+    </ul>
+    </div>
+    </div>
+    </div> 
+    
+    <div class="box6">
+    <div class="box6_1"></div>
+    <div class="box6_2">
+    <div class="box6_2_1">
+    <div class="slide-box-r">
+    <h3>好きなアーティスト</h3>
+    </div>
+        
+    <ul>
+    <li>欅坂46</li>
+    <iframe width="350" height="210" src="https://www.youtube.com/embed/gfzuzDrVRVM" frameborder="0" allowfullscreen></iframe>
+    </ul>
+    </div>
+    </div>
+    </div> 
+</section>
+    
+<section class="url">
+    <h2 class="title1">よく使うサイト集</h2><br>
+     <a href="https://www.amazon.co.jp/ref=nav_logo" target="_blank"><img src="img/amazon.jpg"
+    width="130" height="40" alt="amazon" title="amazon"></a>
+
+    <a href="https://www.youtube.com/?hl=ja&gl=JP"target="_blank"><img src="img/youtube.png"
+    width="130" height="40" alt="youtube" title="YouTube"></a>
+    
+    <a href="https://z1.mugendai.do-johodai.ac.jp/portal/"target="_blank"><img src="img/mugendai.png"
+    width="130" height="40" alt="無限大キャンパス" title="無限大キャンパス"></a>
+    
+    <li><a href="http://www.nogizaka46.com/">
+            乃木坂46HP</a></li>        
+    </section>
+    
+    
+    <section class="form">
+    <h2>お問い合わせはここから</h2>
+    <p>お問い合わせ・ご相談は下記の項目をご記入の上、送信ボタンを押して下さい。
+    </p>
+    <br>
+   
+    <form name="info">
+        <table>
+            <caption>入力フォーム</caption>
+            <tbody>
+                <tr><th>
+                    <label for="username">氏名</label>
+                    <span>必須</span>
+                    </th><td>
+                    <input type="text" name="username" id="username"  placeholder="例：情報 太郎"/>
+                    </td></tr>
+                <tr><th>
+                    <label for="mail">eメール</label>
+                    </th><td>
+                    <input type="email" name="mail" id="mail" placeholder="例：info@hcs.com"/>
+                    </td></tr>
+                <tr><th>
+                    性別
+                    </th><td>
+                    <input type="radio" name="gender" value="男" id="man" checked>
+                    <label for="man">男</label>
+                    <input type="radio" name="gender" value="女" id="woman">
+                    <label for="woman">女</label>
+                    <input type="radio" name="gender" value="その他" id="secret">
+                    <label for="woman">その他</label>
+                    </td></tr> 
+            </tbody>
+        </table>
+        <p>
+            <label><b>お問い合わせ内容</b>
+            <br>
+            <textarea name="remarks" cols="40" rows="4" maxlength="40" placeholder="例：乃木坂46について教えてほしい"></textarea>
+            </label>
+        </p>
+        <input type="submit" onclick="check() ; return false;" value="送信">
+        <input type="reset" value="クリア">
+    </form>
+    </section>
+    
+    <section class="ap">
+    <h2 class="title1">アピールポイント</h2><br>
+    <ul>
+    <li>それぞれの項目をセクションごとで分け色や配置を変えた</li>
+    <li>作品部分にslickを使った</li>
+    <li>自己紹介部分はブロックごとに分け、画像を内容を交互に表示させるようにした</li>
+    <li>自己紹介部分の小タイトル部分を左側は左から右側は右からフェードイン・フェードアウトするようにした</li>
+    <li>作品部分のリンクはそのページ内で移動し、よく使うサイト集の部分は新しいタブで表示するようにした</li>
+    <li>作品部分のリンク先はすべてホームに戻れるリンクを付けた</li>
+    <li>作品とよく使うサイト集の画像にはタイトルを付け、カーソルを合わせたら何かわかるようにした</li>
+    <li>お問い合わせフォームに例を載せ何を書けばいいのかわかりやすくした</li>
+    <li>お問い合わせフォームの必須の部分を黄色で目立つようにした</li>
+    <li>右下にTopにすぐ戻れるボタンを配置した</li>
+    <li>送信されるとポップアップでお知らせするようにした</li>
+    <li>お問い合わせフォームで間違えた記述があった場合赤くするようにし、正しく入力されると元に戻るようにした</li>
+    <li>ハンバーガーメニューを入れてどこでもすぐ目的のところに飛べるようにした</li>
+    <li>ハンバーガーメニューから46のページに飛べるようにした</li>
+    <li>46のページはメンバー紹介部分をスクリプトを使いループで画像を表示するようにした</li>
+    <li>↑の画像に対しクリックされた画像のidを取りそれに合わせた画像を表示するようにした</li>
+    </ul>
+    </section>
+    <section id="link-top">
+    <a href="#top">Top</a>
+    </section>
+    
+    <footer id="bottom">
+        &copy;2016 Shoya Suzuki
+    </footer>
+        <script src="jquery-fadethis-master/dist/jquery.fadethis.min.js"></script>
+    <script>
+    $(window).fadeThis();
+    </script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    
+
+    </body>
+</html>

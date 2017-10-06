@@ -1,0 +1,88 @@
+<!--  作成日：2017/06/15 -->
+<!--  作成者：鈴木 翔哉 --> 
+ 
+<!DOCTYPE html> 
+<html lang="ja"> 
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>CSS と Javascript2</title>
+    <style type="text/css">
+        header{
+            background-color: blue;
+            height: 100px; 
+        }
+        nav{
+            background-color: yellow;
+            float: left;
+            width: 40%;
+            height: 200px;
+        }
+        #art{
+            background-color: red;
+            float: right;
+            width: 60%;
+            height: 200px; 
+        } 
+        #art2{
+            background-color: green;
+            float: right;
+            width: 60%;
+            height: 100px; 
+        }
+        footer{
+            background-color: gray;
+            height: 50px;
+            clear: both;
+        } 
+        .home{
+            list-style: none;
+            list-style-type: none;
+            padding-left: 0px;
+        }
+    </style>
+     <script>
+         function change(n) {
+             document.getElementById("mainBody").style.backgroundColor = n;
+         }
+    </script> 
+ 
+</head> 
+ 
+<body id="mainBody">
+ 
+<header>  
+    ヘッダー部
+</header> 
+ 
+<nav>
+    ナビゲーション部
+    <ul>
+        <li><a href="ensyu09_2_1.html">記事 1</a></li>
+        <li><a href="ensyu09_2_2.html">記事 2</a></li>
+    </ul>
+</nav> 
+ 
+<article id="art"> 
+    記事１
+     <p>記事内背景変更</p>
+    <ul><li>
+        <input type="button" onclick="change('green')" value="緑">
+        </li><li>
+        <input type="button" onclick="change('red')" value="赤">
+        </li><li>
+        <input type="button" onclick="change('pink')" value="ピンク">
+        </li></ul>
+</article> 
+ 
+    
+<footer> 
+    フッター部
+</footer> 
+    
+    <ul class="home">
+    <a href="../index.html">ホームへ戻る</a>
+    </ul>
+ 
+</body>
+</html>

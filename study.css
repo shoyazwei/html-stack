@@ -1,0 +1,385 @@
+html{
+    margin:0;
+    padding:0;
+}
+body{
+    font-family: メイリオ;
+    margin:0;
+    padding:0;
+    display: block;
+}
+h2{
+    text-align: center;
+    padding-top:5px; 
+}
+.ap h2{
+    text-align: left;
+    margin-left: 15px;
+}
+h3{
+    text-align: center;
+    margin-top: 30px;   
+}
+div{
+    display: block;
+}
+
+/*左からのスライド*/
+.slide-box-l{
+        opacity : 0;
+    transform : translate(-100px, 0);
+    transition : all 500ms;
+} 
+/* 画面内に入った状態 */
+.slide-box-l.scrollin {
+    opacity : 1;
+    transform : translate(0, 0);
+    transition:transform 1s;		
+	-webkit-transition:-webkit-transform 1s;
+    }
+.slide-box-l.scrollout{
+    opacity : 0;
+    transform : translate(-100px, 0px);
+    transition:transform 1s;		
+	-webkit-transition:-webkit-transform 1s;
+} 
+/*右からのスライド*/
+.slide-box-r{
+        opacity : 0;
+    transform : translate(100px, 0);
+    transition : all 500ms;
+} 
+/* 画面内に入った状態 */
+.slide-box-r.scrollin {
+    opacity : 1;
+    transform : translate(0, 0);
+    transition:transform 1s;		
+	-webkit-transition:-webkit-transform 1s;
+    }
+.slide-box-r.scrollout{
+    opacity : 0;
+    transform : translate(100px, 0px);
+    transition:transform 1s;		
+	-webkit-transition:-webkit-transform 1s;
+} 
+
+.box1{
+    height: 400px; 
+}
+.box1_1{
+    background: url(img/%E7%A7%8B%E7%B4%B9%E4%BB%8B.jpg)0 0 no-repeat;
+    background-size: cover;
+    float: right;
+    width: 50%;
+    height: 400px; 
+}
+.box1_2{
+    width: 50%;
+    height: 400px;
+    float: left; 
+    display: table;
+}
+.box1_2_1{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+.box1_2_2..follow {
+    position: fixed;
+    top: 0;
+}
+
+
+/*@fadein start*/
+.title1{
+    display: inline-block;
+}
+
+/*@fadein stop*/
+.box2{
+    height: 400px; 
+}
+.box2_1{
+    background: url(img/%E7%A7%8B%E5%B2%A9%E8%A6%8B%E6%B2%A2.jpg)0 0 no-repeat;
+    background-size: cover;
+    float: left;
+    width: 50%;
+    height: 400px; 
+}
+.box2_2{
+    width: 50%;
+    height: 400px;
+    float: right; 
+    display: table;
+}
+.box2_2_1{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+
+.box3{
+    height: 400px; 
+}
+.box3_1{
+    background: url(img/%E7%A7%8B%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84.jpg)0 0 no-repeat;
+    background-size: cover;
+    float: right;
+    width: 50%;
+    height: 400px; 
+}
+.box3_2{
+    width: 50%;
+    height: 400px;
+    float: left; 
+    display: table;
+}
+.box3_2_1{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+
+.box4{
+    height: 400px; 
+}
+.box4_1{
+    background: url(img/%E7%A7%8B%E5%8B%89%E5%BC%B7.jpg)0 0 no-repeat;
+    background-size: cover;
+    float: left;
+    width: 50%;
+    height: 400px; 
+}
+.box4_2{
+    width: 50%;
+    height: 400px;
+    float: right; 
+    display: table;
+}
+.box4_2_1{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+
+.box5{
+    height: 400px; 
+}
+.box5_1{
+    background: url(img/%E7%A7%8B%E6%8A%80%E8%A1%93.jpg)0 0 no-repeat;
+    background-size: cover;
+    float: right;
+    width: 50%;
+    height: 400px; 
+}
+.box5_2{
+    width: 50%;
+    height: 400px;
+    float: left; 
+    display: table;
+}
+.box5_2_1{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+
+.box6{
+    height: 400px; 
+}
+.box6_1{
+   background: url(img/%E7%A7%8B%E7%8C%AB.jpg)0 0 no-repeat;
+    background-size: cover;
+    float: left;
+    width: 50%;
+    height: 400px; 
+}
+.box6_2{
+    width: 50%;
+    height: 400px;
+    float: right; 
+    display: table;
+}
+.box6_2_1{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+header{
+    background: url(img/header-back.png)0 0 no-repeat;
+    background-size: cover;
+    padding-top: 20%;
+    color: #ffdead;
+}
+.works{
+    background-color: #fff;
+    overflow:hidden;
+    margin:0 auto;
+}
+.ensyuu{
+    margin: 0 auto;
+}
+
+.works ul{
+    list-style: none;
+    list-style-type: none;
+}
+
+#check1:checked ~ #w{
+	display:inline-block;
+}
+.works li{
+    float:left;
+    padding: 5px 5px;
+}
+.abouts{
+    background-color: #ffdead;
+    text-align: center;
+}
+.abouts ul{
+    list-style: none;
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+.form{
+    text-align: center;
+    background-color: #fff;
+}
+
+footer{
+    background-color: #f0ffff;
+    color: #000000;
+    text-align:center;
+}
+*{
+    margin:0;
+}
+
+nav{
+    background-color: #ffdead;
+}
+
+.url{
+    background-color: #faebd7;
+     text-align:center;
+    list-style-type: none;
+}
+.url a{
+    margin: 5px;
+}
+
+span {
+   
+    background: #fcee21;
+    border-radius: 5px;
+    padding: 3px 3px 3px;
+    font-weight: bold;
+    margin-left: 13px;
+    line-height: 1;
+    font-size: 14px;
+}
+
+
+#menu li{
+    display: inline-block;
+    text-align: center;
+    width: 23%;
+}
+#menu a{
+    color:black;
+    text-decoration:none;
+}
+#menu a:hover{
+    background-color:#fa8072;
+}
+#link-top {			
+    position: fixed;
+    bottom: 30px;	
+    right: 0px;		
+}
+#link-top a {			
+    background-color:gray;	
+    color:white;		
+    text-decoration: none;	
+    padding: 10px;		
+    opacity: 0.7;		
+}
+#link-top a:hover {	
+    background-color:dimgray;	
+}
+
+#ham-menu {
+    background-color: #fff; /*メニュー背景色*/
+    box-sizing: border-box;
+    height: 100%;
+    padding: 10px 40px; /*メニュー内部上下左右余白*/
+    position: fixed;
+    right: -300px; /*メニュー横幅①と合わせる*/
+    top: 0;
+    transition: transform 0.3s linear 0s; /*0.3s は変化するのにかかる時間*/
+    width: 300px; /*メニュー横幅①*/
+    z-index: 1000;
+}
+#ham-menu a:hover{
+    background-color:#fa8072;
+}
+
+#ham-menu::before {
+    background-color: #ffffff; /*ボタン部分背景色*/
+    border-radius: 0 0 0 10px; /*左下角丸*/
+    color: #000000; /*アイコン（フォント）色*/
+    content: "≡"; /*メニューアイコン*/
+    display: block;
+    font-size: 50px; /*アイコン（フォント）サイズ*/
+    height: 50px;
+    line-height: 50px; /*縦位置中央化*/
+    position: absolute;
+    right: 100%;
+    text-align: center;
+    top: 0;
+    width: 50px;
+
+}
+nav a{
+    text-decoration: none;
+}
+/*透過背景部分*/
+#menu-background {
+    background-color: #000000; /*黒背景部分背景色*/
+    display: block;
+    height: 100%;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: all 10s linear 10s; /*0.3s は変化するのにかかる時間*/
+    width: 100%;
+    z-index: -1;
+}
+
+/*hover 時の処理*/
+#ham-menu:hover {
+    transform: translate(-180px); /*メニュー横幅①と合わせる*/
+    background-color: #FBDAC8;
+}
+
+#ham-menu:hover + #menu-background {
+    opacity: 0.5; /*黒背景部分透過度*/
+    z-index: 999;
+}
+
+.ap{
+    background-color: #ffdead;
+}

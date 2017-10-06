@@ -1,0 +1,328 @@
+<!DOCTIPE html>
+<html lang="ja">
+    
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <title>R3A112</title>
+    <link rel=stylesheet href="nogizaka.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/> 
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
+    <script>
+        //繰り返しでメンバーの画像を表示する
+        $(function(){
+            for(var i=0;i<46;i++){
+                 $('<div><img src="nogizakabig/sp_m%20('+i+').png" width="180" id='+i+'></div>').appendTo('.ensyuu');
+            } 
+        });
+        
+        var windowHeight = $(window).height();
+            
+        var i=4;
+
+        $(document).ready(function(){
+              $('.ensyuu').slick({
+                infinite: true,
+                slidesToShow: i,
+                slidesToScroll: i,
+                dots:true
+              });
+        var size = $('.ensyuu div').length;
+        
+        var width = Math.ceil(size/i)*20;
+        $('.slick-dots').attr('style','width:'+360+'px;margin:0 auto;position:inherit;bottom:0;');
+            });
+    
+     //スクロールで文字を横から出す     
+    $(function(){
+          
+    $(window).scroll(function (){
+        $('.slide-box-l').each(function(){
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            
+            var ds = $(this).scrollTop();
+//            var val=elemPos - windowHeight + 200;
+//            $('.testscroll').html("scroll位置"+scroll+'<br>要素位置'+elemPos+'<br>windowHeight<br>'+windowHeight+'<br>val'+val);
+//            
+            if (scroll > elemPos - windowHeight + 200 && scroll < elemPos+300){
+                $(this).addClass('scrollin');
+            }else{
+                $(this).removeClass('scrollin');
+            }
+
+        });
+    });
+    $(window).scroll(function (){
+        $('.slide-box-r').each(function(){
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            
+            var ds = $(this).scrollTop();
+           
+            if (scroll > elemPos - windowHeight + 200 && scroll < elemPos+300){
+                $(this).addClass('scrollin');
+            }else{
+                $(this).removeClass('scrollin');
+            }
+
+        });
+    });
+});
+        $(function(){
+            
+        //クリックされた要素に対しその要素にあった画像を表示する
+        $(".slick-slide img").click(function(){
+            var id = $(this).attr("id");　// idの取得
+            
+                 $('<div class="modal-wrap"><img src="nogizakapro/nogipro('+id+').png"></div>').appendTo('.nomo');
+            
+        //キーボード操作などにより、オーバーレイが多重起動するのを防止する
+        $( this ).blur() ;	//ボタンからフォーカスを外す
+        if( $( "#modal-overlay" )[0] ) return false ;		//新しくモーダルウィンドウを起動しない (防止策1)
+        //if($("#modal-overlay")[0]) $("#modal-overlay").remove() ;		//現在のモーダルウィンドウを削除して新しく起動する (防止策2)
+        //オーバーレイを出現させる
+        $( "body" ).append( '<div id="modal-overlay"></div>' ) ;
+        $( "#modal-overlay" ).fadeIn( "slow" ) ;
+        //コンテンツをセンタリングする
+        centeringModalSyncer() ;
+        //コンテンツをフェードインする
+        $( "#modal-content" ).fadeIn( "slow" ) ;
+        //[#modal-overlay]、または[#modal-close]をクリックしたら…
+        $( "#modal-overlay,#modal-close" ).unbind().click( function(){
+        //[#modal-content]と[#modal-overlay]をフェードアウトした後に…
+        $( "#modal-content,#modal-overlay" ).fadeOut( "slow" , function(){
+        //[#modal-overlay]を削除する
+        $('#modal-overlay').remove() ;
+        $('.nomo img').remove();
+        
+        } ) ;
+        } ) ;
+        } ) ;
+        
+        //リサイズされたら、センタリングをする関数[centeringModalSyncer()]を実行する
+        $( window ).resize( centeringModalSyncer ) ;
+        //センタリングを実行する関数
+        function centeringModalSyncer() {
+        //画面(ウィンドウ)の幅、高さを取得
+        var w = $( window ).width() ;
+        var h = $( window ).height() ;
+        // コンテンツ(#modal-content)の幅、高さを取得
+        // jQueryのバージョンによっては、引数[{margin:true}]を指定した時、不具合を起こします。
+        var cw = $( "#modal-content" ).outerWidth( {margin:true} );
+        var ch = $( "#modal-content" ).outerHeight( {margin:true} );
+        var cw = $( "#modal-content" ).outerWidth();
+        var ch = $( "#modal-content" ).outerHeight();
+        //センタリングを実行する
+        $( "#modal-content" ).css( {"left": ((w - cw)/2) + "px","top": ((h - ch)/2) + "px"} ) ;
+        }
+        } ) ;
+
+    </script> 
+</head>
+    
+<body>
+    
+    <header id="top">
+        <h1>乃木坂46</h1>
+    </header>
+    
+<section id="work" class="works">
+    
+    <h2 id="s" class="title1">メンバー一覧</h2>
+
+    <div class="ensyuu"></div>
+    
+</section>
+    
+    <section id="about" style="clear:both" class="abouts">
+    <div class="box1">
+        <div class="box1_1"></div>
+    <div class="box1_2">
+    <div class="box1_2_1">
+    <div class="slide-box-l">
+        <h2 class="title1" >乃木坂46とは</h2>
+        </div>
+        
+        
+        <h5><br>AKB48公式ライバルとして結成したアイドルグループです。<br>
+            グループ名の「乃木坂」は、最終オーディション会場の「SME乃木坂ビル」に由来します。<br>
+            「46」の由来に関しては、「AKB48より人数が少なくても負けないという意気込み（秋元康氏）」から。<br>
+            読み方は”ノギザカフォーティーシックス”。また、メンバーは全国規模のオーディションにより、<br>
+            38,934人の応募の中からスターティングメンバーとして33人が選ばれました。</h5>
+        
+        </div>
+    </div>
+    </div>
+    
+    
+    <div class="box2">
+    <div class="box2_1"></div>
+    <div class="box2_2">
+    <div class="box2_2_1">
+    <div class="slide-box-r">
+    <h2>聖地</h2>
+    </div>
+        
+    <h4>乃木坂</h4>
+    <br>
+    <ul>
+        <iframe width="380" height="250" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1620.683765316865!2d139.72690687186386!3d35.66795129649933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b7e8dd52377%3A0xd550759b75498030!2z44CSMTA3LTAwNTIg5p2x5Lqs6YO95riv5Yy66LWk5Z2C77yZ5LiB55uu77yWIOmDvemBkzQxM-WPt-e3mg!5e0!3m2!1sja!2sjp!4v1499739294931"  frameborder="0" style="border:0" allowfullscreen></iframe>
+    </ul>
+    </div>
+    </div>
+    </div>
+    
+    <div class="box3">
+    <div class="box3_1"></div>
+    <div class="box3_2">
+    <div class="box3_2_1">
+    <div class="slide-box-l">
+    <h1>シングル曲</h1>
+    <br>
+    </div>
+    <div class="sin1">  
+    <h4>
+    <ul>
+    <li>1st ぐるぐるカーテン　</li>
+    <li>2nd おいでシャンプー　</li>
+    <li>3rd 走れ!Bicycle　　　</li>
+    <li>4th 制服のマネキン　　</li>
+    <li>5th 君の名は希望　　　</li>
+    <li>6th ガールズルール　　</li>
+    <li>7th バレッタ　　　　　</li>
+    <li>8th 気づいたら片思い　</li>
+    <li>9th 夏のFree&amp;Easy　　</li>
+    </ul>
+    </h4>
+    </div>
+    <div class="sin2">
+    <h4>
+    <ul>
+    <li>10th 何度目の青空か？　　</li>
+    <li>11th 命は美しい　　　　　</li>
+    <li>12th 太陽ノック　　　　　</li>
+    <li>13th 今、話したい誰かがいる</li>
+    <li>14th ハルジオンが咲く頃　　</li>
+    <li>15th 裸足でSummer　　　　</li>
+    <li>16th サヨナラの意味　　　　</li>
+    <li>17th インフルエンサー　　　</li>
+    <li>18th 逃げ水（2017/8/9発売）</li>
+    </ul>
+    </h4>
+    </div>
+    </div>
+    </div>
+    </div>    
+    
+    <div class="box4">
+    <div class="box4_1"></div>
+    <div class="box4_2">
+    <div class="box4_2_1">
+    <div class="slide-box-r">
+    <h2>表題曲 歴代センター</h2>
+    <br>
+    </div>
+    <h4>    
+    <ul>
+    <li>1代目 &emsp;&emsp;1st~5th,12th &ensp;&emsp;&emsp;&nbsp;&emsp;&emsp;&ensp;
+        <a href="https://48pedia.org/%E7%94%9F%E9%A7%92%E9%87%8C%E5%A5%88" target="_blank">
+            生駒里奈</a></li>
+    <li>2代目 &emsp;&emsp;6th,13th,17th &ensp;&emsp;&emsp;&emsp;&emsp;&ensp;<a href="https://48pedia.org/%E7%99%BD%E7%9F%B3%E9%BA%BB%E8%A1%A3" target="_blank">
+            白石麻衣</a></li>
+    <li>3代目 &emsp;&emsp;7th &ensp;&emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;<a href="https://48pedia.org/%E5%A0%80%E6%9C%AA%E5%A4%AE%E5%A5%88" target="_blank">堀未央奈</a></li>
+    <li>4代目 &emsp;&emsp;8th,9th,11th,13th,17th &thinsp;<a href="https://48pedia.org/%E8%A5%BF%E9%87%8E%E4%B8%83%E7%80%AC" target="_blank">西野七瀬</a></li>
+    <li>5代目 &emsp;&emsp;10th &emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&thinsp;<a href="https://48pedia.org/%E7%94%9F%E7%94%B0%E7%B5%B5%E6%A2%A8%E8%8A%B1" target="_blank">生田絵梨花</a></li>
+    <li>6代目 &emsp;&emsp;14th &ensp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;&nbsp;<a href="https://48pedia.org/%E6%B7%B1%E5%B7%9D%E9%BA%BB%E8%A1%A3" target="_blank">深川麻衣</a></li>
+    <li>7代目 &emsp;&emsp;15th &ensp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;&nbsp;<a href="https://48pedia.org/%E9%BD%8B%E8%97%A4%E9%A3%9B%E9%B3%A5" target="_blank">齋藤飛鳥</a></li>
+    <li>8代目 &emsp;&emsp;16th &ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;<a href="https://48pedia.org/%E6%A9%8B%E6%9C%AC%E5%A5%88%E3%80%85%E6%9C%AA" target="_blank">橋本奈々未</a></li>
+    <li>（9代目 17th テレ東音楽祭2017・真夏の全国ツアー2017 <a href="https://www.youtube.com/watch?v=RRl8fqH6GGU" target="_blank">ヒム子</a>）</li>
+    <li>9代目 &emsp;&emsp;18th &emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&thinsp;<a href="https://48pedia.org/%E5%A4%A7%E5%9C%92%E6%A1%83%E5%AD%90" target="_blank">大園桃子</a>・<a href="https://48pedia.org/%E4%B8%8E%E7%94%B0%E7%A5%90%E5%B8%8C" target="_blank">与田祐希</a></li>
+    </ul>
+    </h4>
+    </div>
+    </div>
+    </div> 
+     
+    <div class="box5">
+    <div class="box5_1"></div>
+    <div class="box5_2">
+    <div class="box5_2_1">
+    <div class="slide-box-l">
+    <h2>鈴木が見た主な坂道関連番組</h2><br>
+    </div>
+        
+    <ul>
+        <h4>乃木坂46</h4><br>
+        <h5>
+        <li>乃木坂って、どこ？ 180回</li>
+        <li>NOGIBINGO!1~8 各12回（8のみ11回）</li>
+        <li>乃木坂工事中　114回（7/23現在）</li>
+        <li>初森ベマーズ　12回</li>
+        </h5>
+        <br><h4>欅坂46</h4><br>
+        <h5>
+        <li>欅って、書けない?　89回（7/23現在）</li>
+        <li>KEYABINGO!1~3 各12回（3は放送中　1回　7/23現在）</li>
+        <li>徳山大五郎を誰が殺したか?　12回</li>
+        <li>残酷な観客達　10回</li>
+        </h5>
+    </ul>
+    </div>
+    </div>
+    </div> 
+    
+    <div class="box6">
+    <div class="box6_1"></div>
+    <div class="box6_2">
+    <div class="box6_2_1">
+    <div class="slide-box-r">
+    <h2>最新シングル</h2>
+    </div>
+        
+    <ul>
+    <br>
+    <h4><li>逃げ水</li></h4><br>
+    <iframe  width="450" height="250"  src="https://www.youtube.com/embed/nhrXbPlpdQQ" frameborder="0" allowfullscreen></iframe>
+        
+    </ul>
+    </div>
+    </div>
+    </div> 
+</section>
+    
+<section class="url">
+    <h2 class="title1">坂道関連ページ</h2><br>
+     <a href="http://www.nogizaka46.com/" target="_blank"><img src="img/nogiHP.png"
+    width="280" height="77" alt="乃木坂46HP" title="乃木坂46HP"></a>
+
+    <a href="http://www.keyakizaka46.com/s/k46o/?ima=0000"target="_blank"><img src="img/keyakiHP.png"
+    width="280" height="77" alt="欅坂46HP" title="欅坂46HP"></a>
+        
+    </section>
+    
+   
+    <section id="link-top">
+    <a href="#top">Top</a>
+    </section>
+    
+    <footer>
+        <a href="index.html">ホームへ戻る</a>
+    </footer>
+    <script>
+    $(window).fadeThis();
+    </script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    
+    <div id="modal-content">
+    <div id="modal-content-innar">
+    <!-- モーダルウィンドウのコンテンツ開始 -->
+    <div class="nomo"></div>
+    <p><a id="modal-close" class="button-link">閉じる</a></p>
+    </div>
+    </div>
+    
+    </body>
+</html>

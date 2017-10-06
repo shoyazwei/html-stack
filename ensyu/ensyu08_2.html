@@ -1,0 +1,82 @@
+<!--  作成日：2017/06/08 -->
+<!--  作成者：鈴木 翔哉 --> 
+ 
+<!DOCTYPE html> 
+<html lang="ja"> 
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>学生情報登録１</title>
+        <script>
+            function check(){
+                var flag = 0;
+                if(document.student.studentid.value == ""){
+                    flag = 1;
+                    student.studentid.style.backgroundColor='pink';
+                }
+                if(document.student.username.value == ""){
+                    flag = 1;
+                    student.username.style.backgroundColor='pink';
+                }
+                if(!document.student.tel.value.match(/^[0-9]*$/)){
+                    flag = 2;
+                    student.tel.style.backgroundColor='aqua';
+                }
+                if(flag == 1){
+                    alert('必須項目に未入力がありました');
+                    return false;
+                }else if(flag == 2){
+                    alert('指定文字以外の文字列が入力されました');
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+            function message(){
+                alert("お待たせしました。")
+            }
+    </script> 
+</head> 
+ 
+<body onload="setTimeout('message()',5000)">
+    <p>5秒待ってね</p>
+    <h2>学生情報登録１</h2>
+    <p>必要事項を記入して登録ボタンを押してください。</p><br>
+    <form name="student">
+        <table>
+            <caption>入力フォーム</caption>
+            <tbody>
+                <tr><th>
+                    <label for="studentid">学籍番号(必須)</label> 
+                    </th><td>
+                    <input type="number" name="studentid" id="studentid" />
+                    </td></tr>
+                <tr><th>
+                    <label for="username">氏名(必須)</label> 
+                    </th><td>
+                    <input type="text" name="username" id="username" />
+                    </td></tr>
+                <tr><th>
+                    <label for="tel">電話番号(半角数字)</label> 
+                    </th>
+                    <td>
+                        <input type="tel" name="tel" id="tel" />
+                    </td></tr>
+            </tbody>
+        </table>
+        <p>
+        <label>備考
+            <br>
+            <textarea name="remarks" cols="40" rows="4" maxlength="40"></textarea>
+            </label>
+        </p>
+         <input type="submit" onclick="check(); return false;" value=" 登録">
+        <input type="reset" value="クリア"> 
+    </form><hr>
+    <script>
+        document.write("<small>このファイルの最終更新日は " + document.lastModified + " です。</small>"); 
+    </script>
+    <br><a href="../index.html">ホームへ戻る</a>
+</body> 
+ 
+</html>

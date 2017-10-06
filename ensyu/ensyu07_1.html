@@ -1,0 +1,49 @@
+<!--  作成日：2017/06/01 -->
+<!--  作成者：鈴木 翔哉 --> 
+ 
+<!DOCTYPE html> 
+<html lang="ja"> 
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>学生情報登録１</title>
+</head> 
+ 
+<body>
+    <h2>学生情報登録１</h2>
+    <p>必要事項を記入して登録ボタンを押してください。</p><br>
+    <form>
+        <table>
+            <caption>入力フォーム</caption>
+            <tbody>
+                <tr><th>
+                    <label for="studentid">学籍番号</label>
+                    </th><td>
+                    <input type="number" name="studentid" id="studentid" />
+                    </td></tr>
+                <tr><th>
+                    <label for="username">氏名</label>
+                    </th><td>
+                    <input type="text" name="username" id="username" />
+                    </td></tr>
+                <tr><th>
+                    <label for="tel">電話番号</label>
+                    </th>
+                    <td>
+                        <input type="tel" name="tel" id="tel" />
+                    </td></tr>
+            </tbody>
+        </table>
+        <p>
+        <label>備考
+            <br>
+            <textarea name="remarks" cols="40" rows="4" maxlength="40"></textarea>
+            </label>
+        </p>
+        <input type="submit" onclick="alert('send now!') ; return false;" value="登録">
+        <input type="reset" value="クリア">
+    </form>
+    <a href="../index.html">ホームへ戻る</a>
+</body> 
+ 
+</html>
